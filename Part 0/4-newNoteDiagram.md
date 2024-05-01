@@ -8,8 +8,7 @@ sequenceDiagram
     server-->>browser: confirmation for POST
     deactivate server
 
-    browser->>server: GET 
-    https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
     server-->>browser: the HTML document
     deactivate server
