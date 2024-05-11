@@ -1,28 +1,11 @@
+import  axios from 'axios';
 import React from 'react'
 
-export default function PersonForm({persons, setPersons, newName, setNewName, newNumber, setNewNumber, newId, setNewId }) {
-
-  const addPerson = (event) =>{
-    event.preventDefault();
-    if(persons.find(({name}) => name === newName)){
-      alert(`${newName} is already added to phonebook`)
-      return
-    }
-    setNewId(newId => ++newId)
-    const newPerson = {
-      name: newName,
-      number: newNumber,
-      id: newId
-    }
-    setPersons(persons.concat(newPerson))
-    setNewName('')
-    setNewNumber('')
-  }
+export default function PersonForm({newName, setNewName, newNumber, setNewNumber, addPerson}) {
 
   const handleNameChange = (event) => {
     setNewName(event.target.value)
   }
-
   const handleNumberChange = (event) => {
     setNewNumber(event.target.value)
   }

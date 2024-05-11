@@ -1,10 +1,13 @@
 import React from 'react'
 
-export default function Persons({persons}) {
+export default function Persons({persons, handleDelete}) {
   return (
   <div>
     {persons.map((person) => (
-      <div key={person.id}>{person.name} {person.number}</div>
+      <p key={person.id}>
+        {person.name} {person.number}
+        <button onClick={() => handleDelete(person)}>Delete</button>
+      </p>
     ))}
   </div>
   )
